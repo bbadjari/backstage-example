@@ -1,0 +1,10 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: java-library-template
+  title: Java Library Template
+  description: Template for creating Java libraries.
+spec:
+  owner: bbadjari
+  lifecycle: experimental
+  type: library
