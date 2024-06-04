@@ -1,7 +1,7 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Component
 metadata:
-  name: Some Component
+  name: some-component
   description: Component description.
 spec:
   lifecycle: experimental
