@@ -1,9 +1,11 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Component
 metadata:
-  name: some-component
-  description: Component description.
+  name: ${{values.name | dump}}
+  {%- if values.description %}
+  description: ${{values.description | dump}}
+  {%- endif %}
 spec:
   lifecycle: experimental
-  owner: bbadjari
-  type: documentation
+  owner: ${{values.owner | dump}}
+  type: library
