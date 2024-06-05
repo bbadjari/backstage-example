@@ -6,5 +6,4 @@ metadata:
   description: Template for creating Java libraries.
 spec:
   owner: bbadjari
-  lifecycle: experimental
   type: library
