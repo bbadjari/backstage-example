@@ -7,3 +7,42 @@ metadata:
 spec:
   owner: bbadjari
   type: library
+  parameters:
+    - title: Provide new component information
+      required:
+        - name
+        - description
+        - owner
+      properties:
+        name:
+          title: Name
+          type: string
+          description: Unique name of the component.
+          ui:field: EntityNamePicker
+        description:
+          title: Description
+          type: string
+          description: Describe what this component is for.
+        owner:
+          title: Owner
+          type: string
+          description: Owner of the component.
+          ui:field: OwnerPicker
+          ui:options:
+            allowedKinds:
+              - Group
+  steps:
+    - id: fetch-template
+        name: Fetch Template
+        action: fetch:template
+        input:
+          url: ./skeleton
+          values:
+            name: ${{ parameters.name }}
+            description: ${{ parameters.description }}
+            owner: ${{ parameters.owner }}
+    - id: register
+        name: Register
+        action: catalog:register
+        input:
+          catalogInfoPath: "/catalog-info.yaml"
