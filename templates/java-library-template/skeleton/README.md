@@ -1,5 +1,4 @@
-# ${{ values.component_id }}
+# ${{ values.name }}
 
-## Description
-
-${{ values.description }}
+Description: ${{ values.description }}
+Owner: ${{ values.owner }}
